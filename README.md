@@ -1,4 +1,5 @@
-iwpc
-====
+Introductory web programming class
+==================================
 
-Introductory web programming
+Notes and code examples for the introductory programming class at [HSG](http://hackerspace.sg) (March 8 to April 12, 2012).
+
