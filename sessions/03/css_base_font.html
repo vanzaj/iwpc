@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>hello there</title>
+  <style type='text/css'>
+    body {
+      background-color: #aaa;
+      font: normal 16pt/24pt Helvetica,Arial;
+    }
+    /* selection by element, applies to all h1 in the document */
+    h1{
+      font-size: 2em;
+    }
+    /* selection for a group of elements */
+    h1,h2 {
+      color: maroon;
+    }
+    /* selection by (unique) id name, applied to only one element*/
+    div#special {
+      color: navy;
+    }
+    /* selection by class name, applies to a group of elements */
+    p.myquote {
+      font-style: italic;
+    }
+    /* scope of selection, applies to all links inside paragraphs of class test */
+    p.test a {
+      font-weight: bold;
+      color: gray;
+      text-decoration: none;
+    }
+  </style>
+ </head>
+
+<body>
+  <h1>Big title</h1>
+
+  <h2>Smaller title</h2>
+
+  <p>1. some text some text some text some text</p>
+
+  <p id='special'>2. more text more text more text more text more text</p>
+
+  <p class='myquote'>3. yet more text yet more...</p>
+  <p class='myquote'>4. yet more text yet more...</p>
+
+  <h1>Next section</h1>
+
+  <p class='test'>5. <a href='#'>yet</a> more text yet more...</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+  background-color: #aaa;
+  margin:0;
+  padding:0;
+}
+
+#backgrd {
+  position: absolute;
+  margin:0;
+  padding:0;
+  width:100%;
+  z-index:-1;
+}
+
+.autosize {
+  width:100%;
+  height:100%;
+}
+
+#container {
+  width:90%;
+  height: 300px;
+  border: 2px red solid;
+  position: relative;
+}
+
+#panel {
+  background: white;
+  color: black;
+  position: absolute;
+  bottom: 1em;
+  right: 10em;
+  border-radius: 5px
+}
+
+#panel-fix {
+  background: black;
+  opacity: 0.75;
+  color: white;
+  padding: 1em 0 2em 0em;
+  font-size: 1.25em;
+  font-family: Helvetica, sans-serif;
+  width: 100%;
+  position: fixed;
+  bottom:0;
+}

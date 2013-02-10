@@ -1,0 +1,170 @@
+.. highlight: javascript
+
+==========
+Javascript 
+==========
+
+HTML, CSS and JavaScript are the three core technologies that power modern Web,
+especially when it comes to user (front-end) interfaces. Unlike HTML and CSS,
+JavaScript (JS) is a real programming language that can be used for general
+purpose computation. The syntax of JavaScript is similar to Java, but the
+similarities stop there [#]_. These are two very different languages. Like CSS,
+JS can be "embedded" into an html page, or it can be put into a separate file,
+locally or on a remote server. In both cases this is done using the script tag
+which can appear anywhere in the document (head or body sections): 
+
+    <script type="text/javascript"> 
+    function do_something() { 
+        var name = 'John';
+        // ... this is a comment 
+        /* this is also a comment, 
+           just like in css it can span multiple lines 
+         */ 
+    } 
+    </script> 
+
+    <!-- external js --> 
+    <script src="js/jquery.min.js"></script>
+
+
+Programming 101 
+---------------
+
+Strictly speaking, HTML and CSS are not programming languages. They can be
+referred to more accurately as data structure definition languages. This applies
+to XML, LaTeX, Markdown and hundreds of other markup languages.  Programming
+languages have a few more components and elementary building blocks.  Although
+there are many programming languages with very different syntax, the core
+concepts are the same: 
+
+* basic data values (numbers, text characters, collections) 
+* basic operators (+,-,*,<,>,=,...) 
+* data labels (variables, attributes, properties,...) 
+* statements (smallest executable pieces of code)
+* execution logic control (conditions and loops) 
+* process abstraction (functions and subroutines) 
+* modularization (external libraries)
+
+Once these concepts are understood, it is easy to learn any computer language.
+It is much easier compared to learning a natural language because the
+"vocabulary" of programming languages is much smaller [*]_. Learning the syntax
+(reserved words, order of symbols, meaning of different parenthesis and other
+characters) is also important, because computers are not good at understanding
+badly formed statements, but again the number of syntax rules for any given
+language is usually very small.
+
+The way data is stored in computer memory differs if it's a natural number, real
+number or text. The details depends on the computer (CPU architecture and
+operating system) and the actual language, but for many languages 5, 5.0 and
+"5.0" are different things; the first is an *integer*, the second is a *floating
+point number*, and the last is a *string*. These are called data types and many
+languages define more types beyond simple numbers and text.
+
+.. [*] The complexity is in the libraries (network stack, image processing
+       stack, etc...) and the interface to other languages
+
+Expressions like ``5+3``, and ``"5"+"3"`` also mean different things, because the
+meaning of ``+`` often depends on the context defined by data types. Data labels,
+more commonly referred to as variables, are the basic abstractions for values.
+::
+
+    text_color = "#f00"; // change to red 
+    // do something 
+    text_color = "#000"; // back to black 
+
+When a computer (actually the CPU) executes a program, it steps
+through statements one after another. In a way this is analogous to a cook
+preparing a dish following a recipe. A recipe is often broken into preparation
+cooking and serving phases. Those collections of instructions correspond to functions in
+programming. Functions can also be called *procedures* or *subroutines*, but
+basically they just mean a named collection of a set of instructions (hence
+process abstraction). In that sense, functions in programming have a much
+broader sense than functions in mathematics. For greater flexibility, functions
+are often defined with parameters: 
+
+    // function definition 
+    function chili_crab(nb_of_people, type_of_crab) { 
+        //... 
+    } 
+
+    // function call 
+    chili_crab(8, `black pepper'); 
+
+Parameters are simply special variables used to pass values to
+functions during execution. 
+
+Very few processes can be "codified" as a linear stream of instructions. There
+are always if-this-then-do-that-else-do-something_else kind of situations. In
+programming this is called logic control. Apart from *if* situations, logic
+control also includes repetition of statements, called loops::
+
+    // wait for 1 hour 
+    for (var minute = 0; minute < 60; minute++) { 
+        wait(60000); // 1 min = 60 * 1000 milliseconds 
+    } 
+
+
+Javascript 
+----------
+
+JavaScript (JS) was created in 1995 to allow programmatic access to html
+elements. JS is a dynamic, interpreted language and all web browsers include a
+JavaScript interpreter. It is also possible to execute JS outside a browser
+using stand alone interpreters. This is why JS is a general purpose language
+similar to perl, python, php and ruby. To manipulate elements in html, original
+JS allows to do the following::
+
+    <div id='link-div'>
+        some content
+    </div> 
+    <script> 
+        var el = document.getElementById('link-div'); 
+        el.style.color = 'red'; 
+    </script> 
+
+Another way to achieve the same result is via the popular jQuery library [#]_
+which makes HTML and JS interaction much easier:: 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/ jquery.min.js">
+    </script> 
+    <script> 
+        $('#link-div').attr('style', 'color: #ff0000'); 
+    </script>
+
+With jQuery, ``$(name)`` is a shortcut to obtain a reference to an html element,
+``class`` or ``id``. ``something.something_else`` is a common way to access properties and
+functions associated with a composite variable (*object*), the so called dot
+notation [#]_. For example ``$(name).html('something else')`` can be used to
+completely replace the content of an element identified by "name", while
+``$(name).append(' dull, but <i>italic text</i>')`` can be used to add content.
+
+Since all html documents are text documents, it is very common to perform text
+manipulation using JS. The most common operation on text is string
+concatenation. 
+
+    var text = "hello"; 
+    text = text + " world"; // text contains "hello world" 
+    // shortcut version 
+    text += " world" 
+    
+This can be used to pass values to functions which modify css properties
+dynamically::
+
+    <script> 
+    function prism(mycolor, when) { 
+        setTimeout( function() { 
+            $('#link-div').attr('style', 'color: ' + mycolor); 
+        }, when); 
+    } 
+    prism('red', 1000); 
+    prism('rgb(0,0,255)', 1000); 
+    </script>
+
+
+Further reading
+---------------
+
+.. [#] http://en.wikipedia.org/wiki/Javascript 
+.. [#] http://jquery.com/ 
+.. [#] http://en.wikipedia.org/wiki/Object-oriented_programming
+
