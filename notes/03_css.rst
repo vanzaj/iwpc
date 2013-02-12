@@ -148,13 +148,17 @@ Linking CSS and HTML
 --------------------
 
 There are 3 ways to add style to an HTML document. The first one is called
-inline::
+inline:
+
+.. code-block: html
 
     <p style='color: blue;'>morning blues</p> 
     
 While inline CSS is possible, it goes against the idea of separation of content
 and presentation. CSS can be specified inside the head element of the page. This
-is called internal CSS::
+is called internal CSS:
+
+.. code-block: html
 
     <head>
         <style type='text/css'> 
@@ -164,7 +168,9 @@ is called internal CSS::
 
 Finally, CSS code can be put in a separate file on the same computer or even on
 a remote server and linked to the html page also from within the head element.
-This is called external CSS::
+This is called external CSS:
+
+.. code-block: html
 
     <head>
         <link rel='stylesheet' type='text/css' href='style.css'>
@@ -228,10 +234,18 @@ The values for ``margin`` and ``padding`` also often use "font" units like
 ``em``. The short form for setting ``maring`` and ``padding`` has 4 possible
 forms::
 
-    margin: a b c d; /* a = top, b = right, c = bottom, d = left */
-    maring: a b c;   /* a = top, b = right&left, c = bottom */
-    margin: a b;     /* a = top&bottom, b = right&left */
-    margin: a;       /* a = top&bottom&right&left */
+    #box {
+        margin: 1em 5em 2em 5em; /* top, right, bottom, left */
+    }
+    #box {
+        margin: 1em 5em 2em; /* top, right&left, bottom */
+    }
+    #box {
+        margin: 1em 5em ; /* top&bottom, right&left */
+    }
+    #box {
+        margin: 1em ; /* top&bottom&right&left */
+    }
 
 
 Positioning
@@ -276,6 +290,7 @@ addition to position and offsets, elements can "float" and be "clear"ed.
 Appearance on the screen can be affected via the ``display``, ``visibility``
 and ``overflow`` properties.
 
+
 Lists and menus 
 ---------------
 
@@ -308,8 +323,9 @@ More Debugging and other tips
 -----------------------------
 
 Positioning and page layout in general is guaranteed to generate "huh/wtf" [*]_
- moments on a regular basis. It is useful to know the tools that help solving those and
-other non-obvious problems. All modern browsers provide developer tools. 
+moments on a regular basis. It is useful to know the tools that help solving
+those and other non-obvious problems. All modern browsers provide developer
+tools. 
 
 |   View -> Developer -> Developer Tool in Chrome
 |   Develop -> Show Web Inspector in Safari.
