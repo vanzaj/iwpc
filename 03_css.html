@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cascading Style Sheets &mdash; Introductory Web Programming Class</title>
+    
+    <link rel="stylesheet" href="_static/ex_solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Introductory Web Programming Class" href="index.html" />
+    <link rel="next" title="Javascript" href="04_js.html" />
+    <link rel="prev" title="Hyper Text Markup Language" href="02_html.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/hl_monokai.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="04_js.html" title="Javascript"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="02_html.html" title="Hyper Text Markup Language"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Cascading Style Sheets</a><ul>
+<li><a class="reference internal" href="#programming-language-syntax">Programming language syntax</a></li>
+<li><a class="reference internal" href="#css-basics">CSS basics</a><ul>
+<li><a class="reference internal" href="#selection-rules">Selection rules</a></li>
+<li><a class="reference internal" href="#css-properties">CSS Properties</a></li>
+<li><a class="reference internal" href="#css-values">CSS Values</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linking-css-and-html">Linking CSS and HTML</a></li>
+<li><a class="reference internal" href="#page-layout">Page layout</a><ul>
+<li><a class="reference internal" href="#box-properties">Box properties</a></li>
+<li><a class="reference internal" href="#positioning">Positioning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lists-and-menus">Lists and menus</a></li>
+<li><a class="reference internal" href="#more-debugging-and-other-tips">More Debugging and other tips</a></li>
+<li><a class="reference internal" href="#libraries-and-frameworks">Libraries and Frameworks</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="02_html.html"
+                        title="previous chapter">Hyper Text Markup Language</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="04_js.html"
+                        title="next chapter">Javascript</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/03_css.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cascading-style-sheets">
+<h1>Cascading Style Sheets<a class="headerlink" href="#cascading-style-sheets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="programming-language-syntax">
+<h2>Programming language syntax<a class="headerlink" href="#programming-language-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Every programming language has a set of rules that need to be followed to write
+correct statements. Most programming languages have rather limited capacity at
+interpreting badly formed statements which result in either syntax error
+messages or undesirable and sometimes unpredictable outcomes. With HTML for
+instance, forgetting to close the <tt class="docutils literal"><span class="pre">&lt;b&gt;</span></tt> tag will result in the rest of the
+document (until closing tag of the parent element <a class="footnote-reference" href="#id4" id="id1">[*]</a>) in bold font. There are
+common syntax features among many languages such as <em>reserved words</em>, <em>code
+blocks begin</em> and <em>end</em> statements and characters used as special <em>delimiters</em>.
+With HTML, reserved words are the names of the elements (<tt class="docutils literal"><span class="pre">body</span></tt>, <tt class="docutils literal"><span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">a</span></tt>,
+<tt class="docutils literal"><span class="pre">img</span></tt>,...) and attributes (<tt class="docutils literal"><span class="pre">src</span></tt>, <tt class="docutils literal"><span class="pre">width</span></tt>, <tt class="docutils literal"><span class="pre">href</span></tt>, <tt class="docutils literal"><span class="pre">title</span></tt>, ...);
+begin and end correspond to <tt class="docutils literal"><span class="pre">&lt;tag&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;/tag&gt;</span></tt>.  Angular brackets are part
+of the syntax and can not be replaced with something else.</p>
+<p>In many languages, <tt class="docutils literal"><span class="pre">=</span></tt> is used to assign a value to a label (attribute,
+property, variable) as in <tt class="docutils literal"><span class="pre">&lt;img</span> <span class="pre">...</span>&nbsp; <span class="pre">width='300'&gt;</span></tt>.  Assignment <a class="footnote-reference" href="#id17" id="id2">[1]</a> is not
+exactly the same as &#8220;equal&#8221; in the mathematical sense.  Quote marks (single or
+double) around a value usually mean that the value is represented as text
+characters rather than some other data type <a class="footnote-reference" href="#id18" id="id3">[2]</a>.</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[*]</a></td><td>Embedded HTML elements are called &#8220;child&#8221; elements, and the enclosing
+elements are called &#8220;parent&#8221; elements.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="css-basics">
+<h2>CSS basics<a class="headerlink" href="#css-basics" title="Permalink to this headline">¶</a></h2>
+<p>In the beginning, HTML documents contained both text and style instructions for
+fonts and colors (via <tt class="docutils literal"><span class="pre">&lt;font&gt;</span></tt> element and other stylistic attributes). But
+building large websites with many pages while keeping consistent style is very
+difficult without separating content from presentation.  Hence HTML and CSS.
+CSS is used both for setting the style (colors, fonts,...) and for the
+page layout (navigation and content areas) specification. There are 3 important
+things to understand about CSS syntax:</p>
+<ul class="simple">
+<li>selection rules</li>
+<li>properties</li>
+<li>values</li>
+</ul>
+<p>The general syntax is the following:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">selector</span> <span class="p">{</span>
+    <span class="n">property</span><span class="o">:</span> <span class="n">value</span><span class="p">;</span> <span class="c">/* this is a comment */</span>
+    <span class="n">another_property</span><span class="o">:</span> <span class="n">another_value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here&#8217;s an example of settings that will affect the <tt class="docutils literal"><span class="pre">&lt;body&gt;</span></tt> of the document:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span> <span class="c">/* text color */</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">14pt</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If no other rules are defined, this style will be <em>inherited</em> by all other
+elements inside the <tt class="docutils literal"><span class="pre">&lt;body&gt;</span></tt>. CSS uses a priority scheme based on the order of
+style specification and parent-child relationship between html elements to
+determine the actual style to apply to a particular element. There is what
+cascade refers to.</p>
+<div class="section" id="selection-rules">
+<h3>Selection rules<a class="headerlink" href="#selection-rules" title="Permalink to this headline">¶</a></h3>
+<p>Selection rules allow to target specific html elements or a group of elements on
+a page. Here&#8217;s an example of simple grouping:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">navy</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* top 3 headers are dark blue */</span>
+</pre></div>
+</div>
+<p>More specific targeting of elements is achieved using <tt class="docutils literal"><span class="pre">class</span></tt> and <tt class="docutils literal"><span class="pre">id</span></tt>
+attributes of html elements. Consider the following:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">p</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>       <span class="c">/* all paragraphs */</span>
+<span class="nt">p</span><span class="nc">.quote</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="c">/* &lt;p class=&#39;quote&#39;&gt; */</span>
+<span class="nt">p</span><span class="nf">#first</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="c">/* &lt;p id=&#39;first&#39;&gt; */</span>
+</pre></div>
+</div>
+<p>Normally <tt class="docutils literal"><span class="pre">id</span></tt> is used to identify a single element, while a <tt class="docutils literal"><span class="pre">class</span></tt> is used
+to identify two or more elements (usually semantically related). Selection by
+<tt class="docutils literal"><span class="pre">class</span></tt> or <tt class="docutils literal"><span class="pre">id</span></tt> can be done without specifying an element:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.quote</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="c">/* &lt;p class=&#39;quote&#39;&gt; or &lt;div class=&#39;quote&#39;&gt; */</span>
+<span class="nf">#first</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="c">/* &lt;p id=&#39;first&#39;&gt; or &lt;div class=&#39;first&#39;&gt; */</span>
+</pre></div>
+</div>
+<p>Finally, there&#8217;s a descendant selection rule which allows targeting of elements
+embedded into other elements:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* remove underline from links inside quotation paragraph */</span>
+<span class="nt">p</span><span class="nc">.quote</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css-properties">
+<h3>CSS Properties<a class="headerlink" href="#css-properties" title="Permalink to this headline">¶</a></h3>
+<p>CSS properties are similar to attributes of HTML elements except that they are
+separated from values by a colon <tt class="docutils literal"><span class="pre">:</span></tt>. Also like attributes, properties names
+are predefined. Unlike attributes, CSS allows multiple ways to specify
+properties. So called long and short versions. Here&#8217;s an example with fonts:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="c">/* long form */</span>
+<span class="nt">p</span><span class="nc">.quote</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">Verdana</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">1.2em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* short form */</span>
+<span class="nt">p</span><span class="nc">.quote</span> <span class="p">{</span> <span class="k">font</span><span class="o">:</span> <span class="k">italic</span> <span class="m">1.2em</span> <span class="n">Verdana</span><span class="o">,</span><span class="k">sans-serif</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Full font specification is quite elaborate <a class="footnote-reference" href="#id19" id="id5">[3]</a>.</p>
+</div>
+<div class="section" id="css-values">
+<h3>CSS Values<a class="headerlink" href="#css-values" title="Permalink to this headline">¶</a></h3>
+<p>Values correspond to actual desired settings. Unlike values of html attributes,
+css values usually don&#8217;t require quotes (except for <tt class="docutils literal"><span class="pre">font-family</span></tt> names
+containing spaces ex. &#8220;Helvetica Neue&#8221;). Because of long and short forms of
+properties specifications, values are either a particular value or a list of
+values separated by whitespace. The order of values in the list is important.
+Many CSS values can be specified in alternative forms: by predefined keyword, as
+an absolute or a relative value. Many values have units associated to them.
+Again an example with font:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">12pt</span><span class="p">;</span> <span class="p">}</span>   <span class="c">/* absolute value */</span>
+<span class="nt">em</span>   <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="k">larger</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* keyword */</span>
+<span class="nt">em</span>   <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">150</span><span class="o">%</span><span class="p">;</span> <span class="p">}</span>   <span class="c">/* relative to parent */</span>
+<span class="nt">em</span>   <span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">1.5em</span><span class="p">;</span> <span class="p">}</span>  <span class="c">/* relative to parent */</span>
+</pre></div>
+</div>
+<p>Colors <a class="footnote-reference" href="#id20" id="id6">[4]</a> can also be specified in multiple ways:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">a</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="p">}</span>          <span class="c">/* keyword */</span>
+<span class="nt">a</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">128</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span> <span class="p">}</span> <span class="c">/* RGB triplet (0..255) */</span>
+<span class="nt">a</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">50</span><span class="o">%,</span> <span class="m">0</span><span class="p">);</span> <span class="p">}</span> <span class="c">/* RGB triplet (0..100%) */</span>
+<span class="nt">a</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="m">#008000</span><span class="p">;</span> <span class="p">}</span>        <span class="c">/* hex triplet #rrggbb (0..F) */</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="linking-css-and-html">
+<h2>Linking CSS and HTML<a class="headerlink" href="#linking-css-and-html" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 ways to add style to an HTML document. The first one is called
+inline:</p>
+<p>While inline CSS is possible, it goes against the idea of separation of content
+and presentation. CSS can be specified inside the head element of the page. This
+is called internal CSS:</p>
+<p>Finally, CSS code can be put in a separate file on the same computer or even on
+a remote server and linked to the html page also from within the head element.
+This is called external CSS:</p>
+</div>
+<div class="section" id="page-layout">
+<h2>Page layout<a class="headerlink" href="#page-layout" title="Permalink to this headline">¶</a></h2>
+<p>Websites must provide content as well as means to navigate through the site. The
+pages are often divided into areas for this purpose. A typical page layout for a
+blog might look like:</p>
+<div class="figure">
+<img alt="Classical two-columns page layout" src="_images/blog_page_layout.png" style="width: 90%;" />
+<p class="caption">Classical two-columns page layout</p>
+</div>
+<p>Such divisions are made using the <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">id='...'&gt;</span></tt> element <a class="footnote-reference" href="#id9" id="id7">[†]</a> with <tt class="docutils literal"><span class="pre">id</span></tt>
+names defined by the programmer or web designer to suit the context of the
+site. Divs are invisible by default. In order to &#8220;see&#8221; them, one must specify
+CSS properties like <tt class="docutils literal"><span class="pre">background-color</span></tt> and <tt class="docutils literal"><span class="pre">border</span></tt>. From a browser&#8217;s
+perspective, an html page is a collection of &#8220;boxes&#8221; that need to positioned
+inside browser&#8217;s window <a class="footnote-reference" href="#id21" id="id8">[5]</a>. Even text characters and words are &#8220;inside&#8221; their
+own little &#8220;boxes&#8221;. Boxes can be either <em>block</em> level or <em>inline</em> (values for
+<tt class="docutils literal"><span class="pre">display</span></tt> property). Their position is calculated automatically following the
+so called normal &#8220;flow&#8221;, unless specified otherwise.</p>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[†]</a></td><td>HTML5 introduced new elements for page layout: <cite>header`</cite>, <tt class="docutils literal"><span class="pre">footer</span></tt>,
+<tt class="docutils literal"><span class="pre">nav</span></tt>, <tt class="docutils literal"><span class="pre">aside</span></tt>. (<tt class="docutils literal"><span class="pre">&lt;header&gt;</span></tt> replaces <tt class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">id='header'&gt;</span></tt>)</td></tr>
+</tbody>
+</table>
+<div class="section" id="box-properties">
+<h3>Box properties<a class="headerlink" href="#box-properties" title="Permalink to this headline">¶</a></h3>
+<p>Boxes have a <tt class="docutils literal"><span class="pre">width</span></tt> and a <tt class="docutils literal"><span class="pre">height</span></tt>. Boxes also have <tt class="docutils literal"><span class="pre">margins</span></tt> (outer space),
+<tt class="docutils literal"><span class="pre">border</span></tt> and <tt class="docutils literal"><span class="pre">padding</span></tt> (inner space)</p>
+<div class="figure">
+<img alt="Box properties" src="_images/box-model.png" style="width: 90%;" />
+<p class="caption">Box properties</p>
+</div>
+<p>The values are specified either in pixels or as a percentage of the width/height
+of parent boxes:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">960px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="nf">#page</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">dotted</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">80</span><span class="o">%</span><span class="p">;</span>           <span class="c">/* relative to body */</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>         <span class="c">/* automatic horizontal centering */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The values for <tt class="docutils literal"><span class="pre">margin</span></tt> and <tt class="docutils literal"><span class="pre">padding</span></tt> also often use &#8220;font&#8221; units like
+<tt class="docutils literal"><span class="pre">em</span></tt>. The short form for setting <tt class="docutils literal"><span class="pre">maring</span></tt> and <tt class="docutils literal"><span class="pre">padding</span></tt> has 4 possible
+forms:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nf">#box</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">5em</span> <span class="m">2em</span> <span class="m">5em</span><span class="p">;</span> <span class="c">/* top, right, bottom, left */</span>
+<span class="p">}</span>
+<span class="nf">#box</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">5em</span> <span class="m">2em</span><span class="p">;</span> <span class="c">/* top, right&amp;left, bottom */</span>
+<span class="p">}</span>
+<span class="nf">#box</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">5em</span> <span class="p">;</span> <span class="c">/* top&amp;bottom, right&amp;left */</span>
+<span class="p">}</span>
+<span class="nf">#box</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="p">;</span> <span class="c">/* top&amp;bottom&amp;right&amp;left */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="positioning">
+<h3>Positioning<a class="headerlink" href="#positioning" title="Permalink to this headline">¶</a></h3>
+<p>Changing the positioning of html elements to something other than the default
+&#8220;normal flow&#8221; involves changing the <tt class="docutils literal"><span class="pre">position</span></tt> property as well as offset
+properties (<tt class="docutils literal"><span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">top</span></tt>, <tt class="docutils literal"><span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span></tt>). Most of the time, the
+elements are positioned with respect to the html document and elements inside
+the documents.  But sometimes it is desirable to &#8220;detach&#8221; the elements from the
+document and positions them relative to the browser window (relative to
+viewport). Position can have four values: <tt class="docutils literal"><span class="pre">static</span></tt>, <tt class="docutils literal"><span class="pre">relative</span></tt>,
+<tt class="docutils literal"><span class="pre">absolute</span></tt>, <tt class="docutils literal"><span class="pre">fixed</span></tt>. This naming is unfortunately confusing because
+&#8220;absolute&#8221; is still a &#8220;relative&#8221; term...</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">static</span></tt> - default (normal flow, specified offsets are ignored)</li>
+<li><tt class="docutils literal"><span class="pre">relative</span></tt> - like static, the element is part of the flow, but offsets
+change current position.</li>
+<li><tt class="docutils literal"><span class="pre">absolute</span></tt> - takes the element out of the normal rendering flow, offsets
+are relative to the parent element</li>
+<li><tt class="docutils literal"><span class="pre">fixed</span></tt> - takes the element out of the normal rendering flow, offsets are
+relative to viewport (browser window)</li>
+</ul>
+<p>For non-static elements, actual placement is determined by the values of
+horizontal (<tt class="docutils literal"><span class="pre">left</span></tt> or <tt class="docutils literal"><span class="pre">right</span></tt>) and vertical (<tt class="docutils literal"><span class="pre">top</span></tt> or <tt class="docutils literal"><span class="pre">bottom</span></tt>) offsets
+properties. These properties work relative to the parent box (div or other
+container). It is enough to choose two out of four possible combinations
+(top-left, top-righ, bottom-left, bottom-right):</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.container</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">90</span><span class="o">%</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.container</span> <span class="nf">#banner</span><span class="p">{</span> <span class="c">/*attach to lower left corner */</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="k">left</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Positioning can be tricky, but there are good online tutorials <a class="footnote-reference" href="#id22" id="id10">[6]</a> <a class="footnote-reference" href="#id23" id="id11">[7]</a>.  In
+addition to position and offsets, elements can &#8220;float&#8221; and be &#8220;clear&#8221;ed.
+Appearance on the screen can be affected via the <tt class="docutils literal"><span class="pre">display</span></tt>, <tt class="docutils literal"><span class="pre">visibility</span></tt>
+and <tt class="docutils literal"><span class="pre">overflow</span></tt> properties.</p>
+</div>
+</div>
+<div class="section" id="lists-and-menus">
+<h2>Lists and menus<a class="headerlink" href="#lists-and-menus" title="Permalink to this headline">¶</a></h2>
+<p>HTML provides two elements for creating lists, <tt class="docutils literal"><span class="pre">ol</span></tt> for ordered (numbered)
+and <tt class="docutils literal"><span class="pre">ul</span></tt> for unordered lists. Each list item is specified as a <tt class="docutils literal"><span class="pre">li</span></tt>
+element:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>item 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>item 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>item 3<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</div>
+<p>Web sites often provide menus to help navigate through the site. However, there
+are no special html elements for this. Instead, unordered lists with a
+particular style are used. A horizontal menu can be obtained with the following
+style:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.top-menu</span> <span class="nt">ul</span> <span class="p">{</span>
+    <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="c">/* remove bullets */</span>
+<span class="p">}</span>
+<span class="nc">.top-menu</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-debugging-and-other-tips">
+<h2>More Debugging and other tips<a class="headerlink" href="#more-debugging-and-other-tips" title="Permalink to this headline">¶</a></h2>
+<p>Positioning and page layout in general is guaranteed to generate &#8220;huh/wtf&#8221; <a class="footnote-reference" href="#id13" id="id12">[‡]</a>
+moments on a regular basis. It is useful to know the tools that help solving
+those and other non-obvious problems. All modern browsers provide developer
+tools.</p>
+<div class="line-block">
+<div class="line">View -&gt; Developer -&gt; Developer Tool in Chrome</div>
+<div class="line">Develop -&gt; Show Web Inspector in Safari.</div>
+</div>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[‡]</a></td><td>what-the-flow</td></tr>
+</tbody>
+</table>
+<p>Firefox has an excellent firebug extension <a class="footnote-reference" href="#id24" id="id14">[8]</a>. Actually the dev tools in all
+webkit based browsers are based on firebug. Another way of getting into the dev
+tools is to &#8220;Inspect element&#8221; (via right click on that element, see Fig. 5). Dev
+tools are also a great way to learn how other sites are built. Moving the mouse
+pointer over html elements in the dev tools window will highlight the bounding
+box of that element on the actual page.</p>
+<div class="figure">
+<img alt="Developer Tools" src="_images/debug_inspect_element.png" style="width: 90%;" />
+<p class="caption">Developer Tools</p>
+</div>
+<p>While creating a web page (or developing an application), and especially during
+debugging, it is important to reduce the time it takes to see the result of code
+modification. Saving modifications in the text editor and refreshing the page is
+always faster via keyboard shortcuts compared to mouse clicks.</p>
+</div>
+<div class="section" id="libraries-and-frameworks">
+<h2>Libraries and Frameworks<a class="headerlink" href="#libraries-and-frameworks" title="Permalink to this headline">¶</a></h2>
+<p>Programming in general means solving a particular problem. The problems are
+often big and need to be broken into smaller pieces to be solved separately.
+Very often big problems have common subproblems. Common solutions to such
+subproblems can be put together for reuse. This is called DRY principle of
+software development <a class="footnote-reference" href="#id25" id="id15">[9]</a>. Collections of solutions themselves are called
+libraries, and a collection of libraries (related in a bigger context) is called
+a framework. Until recently, there have been few established libraries for
+html/css because of cross-browser incompatibilities in terms of page rendering.
+These differences are getting smaller and the principles of good page layout are
+also better understood. This is why in the last few years, there was an
+emergence of CSS libraries. One of such libraries is twitter&#8217;s bootstrap <a class="footnote-reference" href="#id26" id="id16">[10]</a>,
+and there are many others.</p>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Assignment_(computer_programming">http://en.wikipedia.org/wiki/Assignment_(computer_programming</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Data_type">http://en.wikipedia.org/wiki/Data_type</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[3]</a></td><td><a class="reference external" href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference external" href="http://www.w3.org/TR/css3-color/">http://www.w3.org/TR/css3-color/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id21" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[5]</a></td><td><a class="reference external" href="http://www.w3.org/TR/css3-box/">http://www.w3.org/TR/css3-box/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[6]</a></td><td><a class="reference external" href="http://www.alistapart.com/articles/css-positioning-101/">http://www.alistapart.com/articles/css-positioning-101/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id23" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[7]</a></td><td><a class="reference external" href="https://developer.mozilla.org/en/CSS/position">https://developer.mozilla.org/en/CSS/position</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id24" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id14">[8]</a></td><td><a class="reference external" href="http://getfirebug.com/">http://getfirebug.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id25" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id15">[9]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/DRY">http://en.wikipedia.org/wiki/DRY</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id26" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id16">[10]</a></td><td><a class="reference external" href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="04_js.html" title="Javascript"
+             >next</a></li>
+        <li class="right" >
+          <a href="02_html.html" title="Hyper Text Markup Language"
+             >previous</a> |</li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+      <a rel="license" 
+        href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+        <img alt="Creative Commons License" style="border-width:0" src="_static/img/cc_by_30_88x31.png" /></a>
+    </div>
+  </body>
+</html>

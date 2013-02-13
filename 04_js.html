@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Javascript &mdash; Introductory Web Programming Class</title>
+    
+    <link rel="stylesheet" href="_static/ex_solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Introductory Web Programming Class" href="index.html" />
+    <link rel="prev" title="Cascading Style Sheets" href="03_css.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/hl_monokai.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="03_css.html" title="Cascading Style Sheets"
+             accesskey="P">previous</a></li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Javascript</a><ul>
+<li><a class="reference internal" href="#programming-101">Programming 101</a></li>
+<li><a class="reference internal" href="#id8">Javascript</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="03_css.html"
+                        title="previous chapter">Cascading Style Sheets</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/04_js.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="javascript">
+<h1>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<p>HTML, CSS and JavaScript are the three core technologies that power modern Web,
+especially when it comes to user (front-end) interfaces. Unlike HTML and CSS,
+JavaScript (JS) is a real programming language that can be used for general
+purpose computation. The syntax of JavaScript is similar to Java, but the
+similarities stop there <a class="footnote-reference" href="#id11" id="id1">[1]</a>. These are two very different languages. Like CSS,
+JS can be &#8220;embedded&#8221; into an html page, or it can be put into a separate file,
+locally or on a remote server. In both cases this is done using the script tag
+which can appear anywhere in the document (head or body sections):</p>
+<blockquote>
+<div><p>&lt;script type=&#8221;text/javascript&#8221;&gt;
+function do_something() {</p>
+<blockquote>
+<div><p>var name = &#8216;John&#8217;;
+// ... this is a comment
+/* this is also a comment,</p>
+<blockquote>
+<div><blockquote>
+<div>just like in css it can span multiple lines</div></blockquote>
+<p><a href="#id2"><span class="problematic" id="id3">*</span></a>/</p>
+</div></blockquote>
+</div></blockquote>
+<p>}
+&lt;/script&gt;</p>
+<p>&lt;!&#8211; external js &#8211;&gt;
+&lt;script src=&#8221;js/jquery.min.js&#8221;&gt;&lt;/script&gt;</p>
+</div></blockquote>
+<div class="section" id="programming-101">
+<h2>Programming 101<a class="headerlink" href="#programming-101" title="Permalink to this headline">¶</a></h2>
+<p>Strictly speaking, HTML and CSS are not programming languages. They can be
+referred to more accurately as data structure definition languages. This applies
+to XML, LaTeX, Markdown and hundreds of other markup languages.  Programming
+languages have a few more components and elementary building blocks.  Although
+there are many programming languages with very different syntax, the core
+concepts are the same:</p>
+<ul class="simple">
+<li>basic data values (numbers, text characters, collections)</li>
+<li>basic operators (+,-,*,&lt;,&gt;,=,...)</li>
+<li>data labels (variables, attributes, properties,...)</li>
+<li>statements (smallest executable pieces of code)</li>
+<li>execution logic control (conditions and loops)</li>
+<li>process abstraction (functions and subroutines)</li>
+<li>modularization (external libraries)</li>
+</ul>
+<p>Once these concepts are understood, it is easy to learn any computer language.
+It is much easier compared to learning a natural language because the
+&#8220;vocabulary&#8221; of programming languages is much smaller <a class="footnote-reference" href="#id5" id="id4">[*]</a>. Learning the syntax
+(reserved words, order of symbols, meaning of different parenthesis and other
+characters) is also important, because computers are not good at understanding
+badly formed statements, but again the number of syntax rules for any given
+language is usually very small.</p>
+<p>The way data is stored in computer memory differs if it&#8217;s a natural number, real
+number or text. The details depends on the computer (CPU architecture and
+operating system) and the actual language, but for many languages 5, 5.0 and
+&#8220;5.0&#8221; are different things; the first is an <em>integer</em>, the second is a <em>floating
+point number</em>, and the last is a <em>string</em>. These are called data types and many
+languages define more types beyond simple numbers and text.</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[*]</a></td><td>The complexity is in the libraries (network stack, image processing
+stack, etc...) and the interface to other languages</td></tr>
+</tbody>
+</table>
+<p>Expressions like <tt class="docutils literal"><span class="pre">5+3</span></tt>, and <tt class="docutils literal"><span class="pre">&quot;5&quot;+&quot;3&quot;</span></tt> also mean different things, because the
+meaning of <tt class="docutils literal"><span class="pre">+</span></tt> often depends on the context defined by data types. Data labels,
+more commonly referred to as variables, are the basic abstractions for values.</p>
+<div class="highlight-python"><pre>text_color = "#f00"; // change to red
+// do something
+text_color = "#000"; // back to black</pre>
+</div>
+<p>When a computer (actually the CPU) executes a program, it steps
+through statements one after another. In a way this is analogous to a cook
+preparing a dish following a recipe. A recipe is often broken into preparation
+cooking and serving phases. Those collections of instructions correspond to functions in
+programming. Functions can also be called <em>procedures</em> or <em>subroutines</em>, but
+basically they just mean a named collection of a set of instructions (hence
+process abstraction). In that sense, functions in programming have a much
+broader sense than functions in mathematics. For greater flexibility, functions
+are often defined with parameters:</p>
+<blockquote>
+<div><p>// function definition
+function chili_crab(nb_of_people, type_of_crab) {</p>
+<blockquote>
+<div>//...</div></blockquote>
+<p>}</p>
+<p>// function call
+chili_crab(8, <a href="#id6"><span class="problematic" id="id7">`</span></a>black pepper&#8217;);</p>
+</div></blockquote>
+<p>Parameters are simply special variables used to pass values to
+functions during execution.</p>
+<p>Very few processes can be &#8220;codified&#8221; as a linear stream of instructions. There
+are always if-this-then-do-that-else-do-something_else kind of situations. In
+programming this is called logic control. Apart from <em>if</em> situations, logic
+control also includes repetition of statements, called loops:</p>
+<div class="highlight-python"><pre>// wait for 1 hour
+for (var minute = 0; minute &lt; 60; minute++) {
+    wait(60000); // 1 min = 60 * 1000 milliseconds
+}</pre>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Javascript<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>JavaScript (JS) was created in 1995 to allow programmatic access to html
+elements. JS is a dynamic, interpreted language and all web browsers include a
+JavaScript interpreter. It is also possible to execute JS outside a browser
+using stand alone interpreters. This is why JS is a general purpose language
+similar to perl, python, php and ruby. To manipulate elements in html, original
+JS allows to do the following:</p>
+<div class="highlight-python"><pre>&lt;div id='link-div'&gt;
+    some content
+&lt;/div&gt;
+&lt;script&gt;
+    var el = document.getElementById('link-div');
+    el.style.color = 'red';
+&lt;/script&gt;</pre>
+</div>
+<p>Another way to achieve the same result is via the popular jQuery library <a class="footnote-reference" href="#id12" id="id9">[2]</a>
+which makes HTML and JS interaction much easier:</p>
+<div class="highlight-python"><pre>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/ jquery.min.js"&gt;
+&lt;/script&gt;
+&lt;script&gt;
+    $('#link-div').attr('style', 'color: #ff0000');
+&lt;/script&gt;</pre>
+</div>
+<p>With jQuery, <tt class="docutils literal"><span class="pre">$(name)</span></tt> is a shortcut to obtain a reference to an html element,
+<tt class="docutils literal"><span class="pre">class</span></tt> or <tt class="docutils literal"><span class="pre">id</span></tt>. <tt class="docutils literal"><span class="pre">something.something_else</span></tt> is a common way to access properties and
+functions associated with a composite variable (<em>object</em>), the so called dot
+notation <a class="footnote-reference" href="#id13" id="id10">[3]</a>. For example <tt class="docutils literal"><span class="pre">$(name).html('something</span> <span class="pre">else')</span></tt> can be used to
+completely replace the content of an element identified by &#8220;name&#8221;, while
+<tt class="docutils literal"><span class="pre">$(name).append('</span> <span class="pre">dull,</span> <span class="pre">but</span> <span class="pre">&lt;i&gt;italic</span> <span class="pre">text&lt;/i&gt;')</span></tt> can be used to add content.</p>
+<p>Since all html documents are text documents, it is very common to perform text
+manipulation using JS. The most common operation on text is string
+concatenation.</p>
+<blockquote>
+<div>var text = &#8220;hello&#8221;;
+text = text + &#8221; world&#8221;; // text contains &#8220;hello world&#8221;
+// shortcut version
+text += &#8221; world&#8221;</div></blockquote>
+<p>This can be used to pass values to functions which modify css properties
+dynamically:</p>
+<div class="highlight-python"><pre>&lt;script&gt;
+function prism(mycolor, when) {
+    setTimeout( function() {
+        $('#link-div').attr('style', 'color: ' + mycolor);
+    }, when);
+}
+prism('red', 1000);
+prism('rgb(0,0,255)', 1000);
+&lt;/script&gt;</pre>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Javascript">http://en.wikipedia.org/wiki/Javascript</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[2]</a></td><td><a class="reference external" href="http://jquery.com/">http://jquery.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[3]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Object-oriented_programming">http://en.wikipedia.org/wiki/Object-oriented_programming</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="03_css.html" title="Cascading Style Sheets"
+             >previous</a></li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+      <a rel="license" 
+        href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+        <img alt="Creative Commons License" style="border-width:0" src="_static/img/cc_by_30_88x31.png" /></a>
+    </div>
+  </body>
+</html>

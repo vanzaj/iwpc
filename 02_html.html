@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hyper Text Markup Language &mdash; Introductory Web Programming Class</title>
+    
+    <link rel="stylesheet" href="_static/ex_solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Introductory Web Programming Class" href="index.html" />
+    <link rel="next" title="Cascading Style Sheets" href="03_css.html" />
+    <link rel="prev" title="Preliminaries" href="01_prelim.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/hl_monokai.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="03_css.html" title="Cascading Style Sheets"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="01_prelim.html" title="Preliminaries"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Hyper Text Markup Language</a><ul>
+<li><a class="reference internal" href="#elements-tags-attributes">Elements, tags, attributes</a></li>
+<li><a class="reference internal" href="#debugging">Debugging</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="01_prelim.html"
+                        title="previous chapter">Preliminaries</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="03_css.html"
+                        title="next chapter">Cascading Style Sheets</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/02_html.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="hyper-text-markup-language">
+<h1>Hyper Text Markup Language<a class="headerlink" href="#hyper-text-markup-language" title="Permalink to this headline">¶</a></h1>
+<p>HyperText Markup Language (HTML) is the lingua franca of the web. Creating a web
+page always involves writing an html document. Three observations from the name:</p>
+<ol class="arabic simple">
+<li>html files are text files</li>
+<li>html is a markup language; it uses annotations (tags) to describe
+the content</li>
+<li>hyper means that html is more than simple text; it allows links.</li>
+</ol>
+<div class="section" id="elements-tags-attributes">
+<h2>Elements, tags, attributes<a class="headerlink" href="#elements-tags-attributes" title="Permalink to this headline">¶</a></h2>
+<p>An HTML document is written using html <em>elements</em>. An element has the following
+form: <tt class="docutils literal"><span class="pre">&lt;tag&gt;content&lt;/tag&gt;</span></tt> &#8211; opening tag, content, closing tag. For example
+to emphasize a part of a phrase, one can write in the text editor:</p>
+<div class="highlight-html"><div class="highlight"><pre>some regular text followed by <span class="nt">&lt;b&gt;</span>bold text<span class="nt">&lt;/b&gt;</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">&lt;b&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;/b&gt;</span></tt> is the markup that the browser will use to render the
+text as:</p>
+<div class="box-serif container">
+<div class="line-block">
+<div class="line">some regular text followed by <strong>bold text</strong></div>
+</div>
+</div>
+<p>The browser interprets html elements and translates them into visual results.
+Most html elements have an opening and a closing tags enclosed in angle
+brackets. There are also empty elements that don&#8217;t have content and a closing
+tag: <tt class="docutils literal"><span class="pre">&lt;tag</span> <span class="pre">/&gt;</span></tt>. The simplest example is <tt class="docutils literal"><span class="pre">&lt;br</span> <span class="pre">/&gt;</span></tt> which is used to force a
+text-line break <a class="footnote-reference" href="#id2" id="id1">[*]</a>:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>I have nothing to say.<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>And I&#39;m saying it.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+<p>which renders as:</p>
+<div class="box-serif container">
+<div class="line-block">
+<div class="line">I have nothing to say.</div>
+<div class="line">And I&#8217;m saying it.</div>
+</div>
+</div>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[*]</a></td><td>html transforms all whitespace characters
+(space, tab, newline) into a single space character.</td></tr>
+</tbody>
+</table>
+<p>Another example of an &#8220;empty&#8221; element is <tt class="docutils literal"><span class="pre">&lt;img...</span>&nbsp; <span class="pre">/&gt;</span></tt> which is used to insert
+an image into a document. However, <tt class="docutils literal"><span class="pre">&lt;img&gt;</span></tt> requires a path specification to
+the actual image file:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&#39;path/to/picture.jpg&#39;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">src</span></tt> is an example of an attribute of an html element. Attributes are
+name-value pairs separated by equal sign (<tt class="docutils literal"><span class="pre">attr_name=value</span></tt>). The names of the
+attributes are predefined.  While the values are set by the programmer according
+to the needs. Values need to be put inside single (<tt class="docutils literal"><span class="pre">'</span></tt>) or double (<tt class="docutils literal"><span class="pre">&quot;</span></tt>)
+quote marks. Attributes are always placed inside the opening tag. An element can
+contain more than one attribute:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&#39;path/to/picture.jpg&#39;</span> <span class="na">width=</span><span class="s">&#39;300&#39;</span> <span class="na">height=</span><span class="s">&#39;200&#39;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>Some attributes are generic and can be applied to any html elements (ex.
+<tt class="docutils literal"><span class="pre">class</span></tt>, <tt class="docutils literal"><span class="pre">id</span></tt>, <tt class="docutils literal"><span class="pre">name</span></tt>), while others are specific to particular elements.</p>
+<p>Hyperlinks are created using an anchor element <tt class="docutils literal"><span class="pre">&lt;a&gt;</span></tt>. Anchor refers to the
+content of the <tt class="docutils literal"><span class="pre">&lt;a&gt;</span></tt> element, the part of the document that will appear as a
+linked text. The destination of the link is specified in the <em>href</em> attribute.
+Links can point to:</p>
+<ol class="loweralpha">
+<li><p class="first">locations on the web:</p>
+<div class="highlight-html"><div class="highlight"><pre>John von Neumann&#39;s wife was a
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#39;http://en.wikipedia.org/wiki/Human_computer&#39;</span><span class="nt">&gt;</span>Computer<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">local files on the same computer/server:</p>
+<div class="highlight-html"><div class="highlight"><pre>This is the end of the introduction to HTML.
+Click <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#39;intro_css.html&#39;</span><span class="nt">&gt;</span>here<span class="nt">&lt;/a&gt;</span> for the introduction to CSS.
+</pre></div>
+</div>
+</li>
+<li><p class="first">even inside the same file:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&#39;first_paragraph&#39;</span><span class="nt">&gt;</span>In the beginning was the command line.<span class="nt">&lt;/p&gt;</span> ...
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#39;#first_paragraph&#39;</span><span class="nt">&gt;</span>Back to the beginning<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>HTML elements can be embedded inside each other:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;&lt;em&gt;</span>Lorem ipsum dolor sit amet...<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&#39;/app/logout&#39;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&#39;logout_btn.png&#39;</span> <span class="nt">/&gt;&lt;/a&gt;</span>
+</pre></div>
+</div>
+<p>The last example shows that links are not limited to text.</p>
+<p>In fact the whole html document can be considered as an html element with
+content embedded inside <tt class="docutils literal"><span class="pre">&lt;html&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;/html&gt;</span></tt> tags. The content is further
+divided into head and body elements. All html documents have the following basic
+structure:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&#39;en&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Page title<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&#39;utf-8&#39;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="c">&lt;!-- this is a comment (ignored by browser) --&gt;</span>
+        Actual text that will appear on the screen...
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>The head tag is used to provide meta information about the page, such as
+document&#8217;s title, author, character encoding, keywords (for search engines) etc.
+Actual content that will appear in the browser is the content of the body
+element.</p>
+<p>In the example above, the text is <em>indented</em> in a way that makes it easier to
+understand the embedded structure of elements. Multiple whitespace characters
+are ignored by the browser, but such formatting greatly improves code
+readability for fellow human developers.</p>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<p>Programming is an activity filled with &#8220;huh?&#8221; and other surprise
+moments when things don&#8217;t work as expected. Looking for what causes unexpected
+results and fixing problems is called debugging. With html for example, it
+may happen that changes in the text editor are not reflected when the file is
+opened (reloaded) in the browser. The fist thing to check is whether the text
+editor and the browser are displaying the same file. When in doubt, html source
+can be viewed in the browser via &#8220;View page source&#8221; (right click or View -&gt;
+Developer -&gt; View source).</p>
+<div class="figure">
+<img alt="View Source in Chrome" src="_images/browser_view_source.png" style="width: 90%;" />
+<p class="caption">View Source in Chrome</p>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/HyperText_Markup_Language">http://en.wikipedia.org/wiki/HyperText_Markup_Language</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/HTML_element">http://en.wikipedia.org/wiki/HTML_element</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Debugging">http://en.wikipedia.org/wiki/Debugging</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="03_css.html" title="Cascading Style Sheets"
+             >next</a></li>
+        <li class="right" >
+          <a href="01_prelim.html" title="Preliminaries"
+             >previous</a> |</li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+      <a rel="license" 
+        href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+        <img alt="Creative Commons License" style="border-width:0" src="_static/img/cc_by_30_88x31.png" /></a>
+    </div>
+  </body>
+</html>

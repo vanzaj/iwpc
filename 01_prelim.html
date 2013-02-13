@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Preliminaries &mdash; Introductory Web Programming Class</title>
+    
+    <link rel="stylesheet" href="_static/ex_solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Introductory Web Programming Class" href="index.html" />
+    <link rel="next" title="Hyper Text Markup Language" href="02_html.html" />
+    <link rel="prev" title="Introductory Web Programming" href="index.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/hl_monokai.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="02_html.html" title="Hyper Text Markup Language"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Introductory Web Programming"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Preliminaries</a><ul>
+<li><a class="reference internal" href="#operating-system">Operating System</a></li>
+<li><a class="reference internal" href="#gui-vs-cli">GUI vs CLI</a></li>
+<li><a class="reference internal" href="#path-directories-and-dots">Path, directories and dots</a></li>
+<li><a class="reference internal" href="#text-files-and-text-editor">Text files and Text Editor</a></li>
+<li><a class="reference internal" href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Introductory Web Programming</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="02_html.html"
+                        title="next chapter">Hyper Text Markup Language</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/01_prelim.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="preliminaries">
+<h1>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="operating-system">
+<h2>Operating System<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h2>
+<p>An <em>operating system</em> (OS) is a low-level software layer that makes all hardware
+pieces in a computer work together. Beyond controlling the CPU, memory, hard
+drives, video output and input devices, it provides services, such as file
+system and networking, and an interface to the user to interact with a computer.
+There are hundreds of OSs, but most people are familiar with Windows and Mac OSX
+and some have heard about Linux and maybe some other UNIX systems.  Both Windows
+and UNIX are used for personal needs (desktops and laptops) and on servers.</p>
+</div>
+<div class="section" id="gui-vs-cli">
+<h2>GUI vs CLI<a class="headerlink" href="#gui-vs-cli" title="Permalink to this headline">¶</a></h2>
+<p>GUI (Graphical User Interface) and CLI (Command Line Interface) are two
+different ways of interacting with computers.  The first is based on
+point-and-click on graphical icons, while the later requires typing commands and
+file names. Both GUI and CLI allow common operations such as listing, copying
+and deleting files.</p>
+<div class="figure">
+<img alt="Files listing using GUI (Finder) and CLI" src="_images/GUI_vs_CLI.png" style="width: 90%;" />
+<p class="caption">Files listing using GUI (Finder) and CLI</p>
+</div>
+<p>Similarly, viewing and modifying files is achieved by &#8220;calling&#8221; or launching
+appropriate programs. CLI may appear as backward and difficult to use at first,
+but it is much more powerful, flexible and productive compared to GUI <a class="footnote-reference" href="#id10" id="id1">[1]</a>.  It
+is also better suited for working on remote computers (for example fixing a
+configuration file on a server in data center half way across the globe).
+Learning computer programming will sooner of later involve learning and using
+CLI. On Macs, CLI can be accessed via <tt class="docutils literal"><span class="pre">Terminal.app</span></tt>.  On Windows, the default
+is <tt class="docutils literal"><span class="pre">cmd.exe</span></tt>.  On Windows 7 and above there appears to be something better
+called <tt class="docutils literal"><span class="pre">powershell</span></tt>.  The terms <em>command line</em>, <em>terminal</em> and <em>shell</em> often
+refer to the same thing. &#8220;Shut Up and Shell&#8221; <a class="footnote-reference" href="#id11" id="id2">[2]</a> if you need to quickly learn
+CLI.</p>
+</div>
+<div class="section" id="path-directories-and-dots">
+<h2>Path, directories and dots<a class="headerlink" href="#path-directories-and-dots" title="Permalink to this headline">¶</a></h2>
+<p>Everything that needs to be stored permanently inside a computer is stored in
+files. This applies to documents, media data as well as programs (executable
+code). Files are often organized using <em>directories</em> (also called <em>folders</em>) and
+directory hierarchies, collections of sub-directories and files.</p>
+<p>The top level of a directory hierarchy is called  <em>root directory</em> . On
+UNIX-like systems it is <tt class="docutils literal"><span class="pre">/</span></tt> (slash character), while for Windows it is usually
+<tt class="docutils literal"><span class="pre">C:\</span></tt>. Access to files from programs is done by specifying either an
+<em>absolute</em> or a <em>relative path</em> <a class="footnote-reference" href="#id12" id="id3">[3]</a>. A path is a sequence of directory names
+separated by a <em>path separator</em> <a class="footnote-reference" href="#id5" id="id4">[*]</a>, leading to a file.  An absolute path
+starts from the root directory, for example <tt class="docutils literal"><span class="pre">/Users/bob/data/misc/ezhik.png</span></tt>.
+Relative path usually means relative to the <em>current working directory</em> (CWD).
+For most programs, CWD means the directory from where the program was launched.
+Almost universally (across file systems and programming languages), CWD is
+referred to as <tt class="docutils literal"><span class="pre">.</span></tt> (dot character).  So <tt class="docutils literal"><span class="pre">./misc/ezhik.png</span></tt> will refer to
+the same file as in the example above, but only provided that a program trying
+to access it was launched from <tt class="docutils literal"><span class="pre">/Users/bob/data</span></tt>.  It is important to know
+which path specification to use when files are expected to be copied from one
+place to another (both on the same or different computers, for example from
+local development machine to a web hosting server). In addition to <tt class="docutils literal"><span class="pre">.</span></tt>,
+there&#8217;s a <tt class="docutils literal"><span class="pre">..</span></tt>, which means parent directory.</p>
+<p>In the context of web applications, root directory refers to a designated place
+inside the file system from where web pages are served. On Linux (which is the
+most common OS for web hosting) these are often in <tt class="docutils literal"><span class="pre">/var/www</span></tt>. When a browser
+makes a request like <tt class="docutils literal"><span class="pre">http://somedomain.com/app/page.html</span></tt>, on the server side
+it means access to <tt class="docutils literal"><span class="pre">/var/www/app/page.html</span></tt>.</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[*]</a></td><td><tt class="docutils literal"><span class="pre">/</span></tt> and <tt class="docutils literal"><span class="pre">\</span></tt> for UNIX and Windows respectively</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="text-files-and-text-editor">
+<h2>Text files and Text Editor<a class="headerlink" href="#text-files-and-text-editor" title="Permalink to this headline">¶</a></h2>
+<p>In programming context <a class="footnote-reference" href="#id13" id="id6">[4]</a>, <em>text</em> often refers to plain text file <a class="footnote-reference" href="#id14" id="id7">[5]</a>, i.e.
+it&#8217;s more about file <em>format</em> than the actual content (characters that appear on
+the screen).  All information in computers is stored in files, and file formats
+are specific ways of how this is done for particular information (documents,
+images, audio, etc). There are thousands of different file formats, but all
+belong to two major categories: text files and binary files. Text files are
+often called human readable <a class="footnote-reference" href="#id15" id="id8">[6]</a> because their content is encoded using an open
+standard (ASCII, UTF). Binary files require a specialized program, often
+proprietary, to access to the information.</p>
+<p>Programming in any language involves writing lines of text following language
+specific <em>syntax</em> and grammar rules. These lines of text are called <em>source
+code</em>, and this information is always saved as text files. A <em>text editor</em> <a class="footnote-reference" href="#id16" id="id9">[7]</a>
+is a specialized program for writing source code in some specific language. Good
+text editors allow working with many different programming languages in a
+consistent environment defined by features such as <em>syntax highlighting</em>,
+<em>auto-indentation</em>, fast <em>search</em> and navigation through the code. Such features
+are the main difference between a text editor and a word processing program like
+Microsoft Word.</p>
+<p>When working with source code inside a text editor, it is important to know
+where open files are located on the hard disk, or where a new file will be
+saved. <em>Desktop</em> is one of possible locations, but it&#8217;s not the most
+convenient one from the programming perspective. On Windows, the path to
+<tt class="docutils literal"><span class="pre">Desktop</span></tt> is <tt class="docutils literal"><span class="pre">C:\Documents</span> <span class="pre">and</span> <span class="pre">Settings\joe_user\Desktop</span></tt>, which is long
+to type and contains blanks (spaces). It is better to &#8220;save&#8221; one&#8217;s work in saner
+place like <tt class="docutils literal"><span class="pre">C:\proj\project_name</span></tt> (corresponding place on OSX would be
+something like <tt class="docutils literal"><span class="pre">/Users/joe_user/proj/project_name/</span></tt>).</p>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://www9.georgetown.edu/faculty/irvinem/theory/Stephenson-CommandLine-1999.pdf">In the Beginning was the Command Line</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://cli.learncodethehardway.org/book/">The Command Line Crash Course</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Path_(computing">http://en.wikipedia.org/wiki/Path_(computing</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[4]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Computer_programming">http://en.wikipedia.org/wiki/Computer_programming</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[5]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Text_file">http://en.wikipedia.org/wiki/Text_file</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[6]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Human-readable_medium">http://en.wikipedia.org/wiki/Human-readable_medium</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[7]</a></td><td><a class="reference external" href="http://en.wikipedia.org/wiki/Text_editor">http://en.wikipedia.org/wiki/Text_editor</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="02_html.html" title="Hyper Text Markup Language"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Introductory Web Programming"
+             >previous</a> |</li>
+        <li><a href="index.html">Introductory Web Programming Class</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+      <a rel="license" 
+        href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+        <img alt="Creative Commons License" style="border-width:0" src="_static/img/cc_by_30_88x31.png" /></a>
+    </div>
+  </body>
+</html>
